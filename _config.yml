@@ -7,8 +7,8 @@ github: aaron
 author: "Aaron"
 email: aaronli789123@gmail.com
 name: "Aaron个人博客"
-url: http://www.panxw.com
-domain: www.panxw.com
+url: https://aaron.github.io/
+domain: https://aaron.github.io/
 all_categories: [
 ["android", "Android开发","/posts/android.html"], 
 ["program", "软件编程","/posts/program.html"],
