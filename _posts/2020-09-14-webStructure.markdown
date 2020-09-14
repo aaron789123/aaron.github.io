@@ -1,6 +1,6 @@
 ---
 layout: post
-category: "web"
+category: "other"
 title:  "该网站结构"
 tags: [thisWeb]
 ---
