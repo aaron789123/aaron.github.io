@@ -9,7 +9,7 @@ tags: [thisWeb]
 > 该文章显示该网站结构，以便使用。
 
 ### 分类(category)
-web -> Web建站; 
+web -> Web建站  
 other ->  杂谈 
 
 ### 结构
