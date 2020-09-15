@@ -6,9 +6,9 @@ tags: [linux,openVPN]
 ---
 
 ###简介
->搭建openVPN流程(服务端)
+>搭建openVPN流程(服务端)  
 >本文以CentOS 7.8 64位
->转自 http://www.zhangblog.com/2020/05/09/openvpn01/
+>转自 http://www.zhangblog.com/2020/05/09/openvpn01/  
 >https://help.aliyun.com/knowledge_detail/42521.html?spm=5176.7841507.2.7.Yv82xS
 
 ### yum源安装openssl和相关的依赖包
