@@ -38,8 +38,10 @@ ExecStart=/usr/local/openvpn/sbin/openvpn --config server.conf
 ~~~
 
 ### 配置系统服务，并开机自启动
+~~~
 cp -a /usr/local/openvpn/lib/systemd/system/openvpn-server@.service /usr/lib/systemd/system/openvpn.service
 systemctl enable openvpn.service
+~~~
 
 ### easy-rsa下载和解压(生成证书)
 ~~~
@@ -60,6 +62,7 @@ vim vars
 ~~~
 ./easyrsa init-pki
 ~~~
+
 ### 设置CA Key Passphrase和common name
 ~~~
 ./easyrsa build-ca
@@ -93,7 +96,7 @@ cp -a pki/dh.pem /etc/openvpn/server/
 cp -a ta.key /etc/openvpn/server/
 ~~~
 
-###创建服务端配置文件
+### 创建服务端配置文件
 参照/usr/local/openvpn-2.4.9/sample/sample-config-files/server.conf文件
 ~~~
 vim /etc/openvpn/server/server.conf   # 配置文件内容 local改为自己IP
@@ -127,14 +130,14 @@ verb 3
 ;explicit-exit-notify 1
 ~~~
 
-###查看防火墙和开启端口
+### 查看防火墙和开启端口
 ~~~
 firewall-cmd --state
 systemctl status firewalld.service
 firewall-cmd --zone=public --add-port=1194/tcp --permanent
 ~~~
 
-###启动openvpn服务并查看进程与端口
+### 启动openvpn服务并查看进程与端口
 ~~~
 systemctl start openvpn.service
 ps -ef | grep 'open'
