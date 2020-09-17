@@ -6,7 +6,7 @@ tags: [linux,shell,学习笔记 ]
 ---
 
 ### 简介
->该文章为Linux Shell的学习笔记
+>该文章为Linux Shell的学习笔记  
 >在终端显示
 
 ### 1.基础知识 
