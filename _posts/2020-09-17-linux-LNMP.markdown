@@ -96,10 +96,10 @@ make & make install
 source='pcrecpp.cc' object='pcrecpp.lo' libtool=yes 
         DEPDIR=.deps depmode=none /bin/sh ./depcomp 
         /bin/sh ./libtool --tag=CXX   --mode=compile  -DHAVE_CONFIG_H -I.   -I/usr/kerberos/include   -c -o pcrecpp.lo pcrecpp.cc
-libtool: ignoring unknown tag CXX
-libtool: unrecognized option `-DHAVE_CONFIG_H'
-Try `libtool --help' for more information.
-make[1]: *** [pcrecpp.lo] Error 1
+libtool: ignoring unknown tag CXX  
+libtool: unrecognized option `-DHAVE_CONFIG_H'  
+Try `libtool --help' for more information.  
+make[1]: *** [pcrecpp.lo] Error 1  
 则缺少安装gcc-c++  
 ~~~
 yum -y install gcc-c++
@@ -115,6 +115,7 @@ tar zxvf nginx-1.18.0.tar.gz
 cd nginx-1.18.0
 ./configure --prefix=/usr/local/nginx --with-pcre=/usr/local/pcre-8.00/m
 make & make install
+~~~
 
 启动Nginx,检查进程是否有启动  
 ~~~
@@ -168,6 +169,7 @@ vim /usr/local/nginx/conf/nginx.conf
 
 重启nginx和php-fpm  
 安装psmisc里面包含killall  
+
 ~~~
 /usr/local/nginx/sbin/nginx -s reload
 killall php-fpm && /usr/local/php/sbin/php-fpm
