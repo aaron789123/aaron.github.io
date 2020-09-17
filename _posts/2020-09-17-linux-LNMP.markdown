@@ -13,6 +13,7 @@ tags: [linux,LNMP, Nginx, MySQL, PHP]
 >https://blog.csdn.net/wohiusdashi/article/details/89358071
 >https://www.cnblogs.com/wenanry/archive/2012/04/16/2451798.html
 >https://blog.csdn.net/sinat_34191046/article/details/83056535
+>https://www.jb51.net/article/47916.htm
 
 ### 安装PHP
 安装与PHP相关的依赖包  
