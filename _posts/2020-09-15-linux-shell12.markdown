@@ -1,27 +1,27 @@
 ---
 layout: post
 category: "linux"
-title:  "linux shell 脚本学习笔记1"
+title:  "linux shell 脚本学习笔记12"
 tags: [linux,shell,学习笔记 ]
 ---
 
 ### 简介
 >该文章为Linux Shell的学习笔记
->
+>在终端显示
 
-### 1.基础知识
+### 1.基础知识 
 shell脚本以shebang(sharp-bang)为起始:  
 ```
 #!/bin/bahs  
 ```
   
 脚本有两种执行方式:  
-  1.将脚本名作为命令行参数：
+  1.将脚本名作为命令行参数：  
 ```
   bash myScript.sh
 ```
   如果使用bash，则不需要添加shebang  
-  2.赋予权限，直接执行
+  2.赋予权限，直接执行  
 ```
   chmod 755 myScript.sh
   ./myScript.sh
@@ -31,14 +31,14 @@ shell脚本以shebang(sharp-bang)为起始:
 ```
 Bash shell历史记录文件：~./bash_history
 
-有两个方法终端打印
-1.echo
+有两个方法终端打印  
+1.echo  
 双引号将会解释特殊字符，但是单引号不会。  
 ```
 echo 'Hi !'
 echo "Hi /!"
 ```
-2.printf; 可以使用格式化字符串指定字符串的宽度、左右对齐等。
+2.printf; 可以使用格式化字符串指定字符串的宽度、左右对齐等。  
 ```
 #!/bin/bash
 #printf.sh
@@ -54,3 +54,13 @@ No          Name Mark
 1          Aaron 98.89
 2         Byrant 100.00
 ```
+3.打印色彩输出  
+文本颜色：重置=0，黑色=30，红色=31，绿色=32，黄色=33，蓝色=34  
+背景颜色：重置=0，黑色=40，红色=41，绿色=42，黄色=43，蓝色=44  
+例子  
+~~~
+echo -e "\e[1;31m This is red text \e[0m"
+echo -e "\e[1;42m This is Green Background \e[0m"
+~~~
+将文字变红（转义符）\e[1;31m  
+将文字重置 \e[0m
