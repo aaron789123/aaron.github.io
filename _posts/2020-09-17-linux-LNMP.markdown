@@ -130,7 +130,7 @@ yum install -y links
 links http://localhost
 ~~~
 
-设置Nginx对于PHP的支持  
+### 设置Nginx对于PHP的支持  
 打开nginx.conf文件，添加下面句子（root为php文件目录），保存，退出  
 ~~~
 vim /usr/local/nginx/conf/nginx.conf
