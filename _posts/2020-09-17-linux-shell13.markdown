@@ -1,1 +1,37 @@
 
+---
+layout: post
+category: "linux"
+title:  "linux shell 脚本学习笔记13"
+tags: [linux,shell,学习笔记 ]
+---
+
+### 简介
+>该文章为Linux Shell的学习笔记  
+>使用变量与环境变量
+
+### 使用变量与环境变量
+查看当前shell中定义的所有变量：
+~~~
+env  
+~~~
+
+得到该应用的进程ID
+~~~
+pgrep vpn
+~~~
+查看该进程ID相关的环境变量
+~~~
+cat /proc/9882/environ
+~~~
+使用tr将\0替换成\n(空格换为换行)：
+~~~
+cat /proc/9882/environ | tr '\0' '\n'
+~~~
+
+var=value和var = value不同，前者为赋值，后者是对比  
+获得字符串的长度  
+~~~
+var=12345
+echo ${#var}
+~~~
