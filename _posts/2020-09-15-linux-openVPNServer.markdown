@@ -22,7 +22,7 @@ cd /usr/local/
 wget https://github.com/OpenVPN/openvpn/archive/v2.4.9.tar.gz
 mv v2.4.9.tar.gz openvpn-2.4.9.tar.gz
 tar xf openvpn-2.4.9.tar.gz 
-cd openvpn-2.4.9/
+cd /usr/local/openvpn-2.4.9
 autoreconf -i -v -f 
 ./configure --prefix=/usr/local/openvpn --enable-lzo --enable-lz4 --enable-crypto --enable-server --enable-plugins --enable-port-share --enable-iproute2 --enable-pf --enable-plugin-auth-pam --enable-pam-dlopen --enable-systemd
 make && make install
@@ -45,6 +45,7 @@ systemctl enable openvpn.service
 
 ### easy-rsa下载和解压(生成证书)
 ~~~
+cd /usr/local/
 wget https://github.com/OpenVPN/easy-rsa/archive/v3.0.7.tar.gz 
 mv v3.0.7.tar.gz easy-rsa-3.0.7.tar.gz
 tar xf easy-rsa-3.0.7.tar.gz
