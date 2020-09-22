@@ -1,7 +1,7 @@
 ---
 layout: post
 category: "linux"
-title:  "Linux系统中搭建openVPN"
+title:  "Linux系统中搭建openVPN(客户端)"
 tags: [linux,openVPN]
 ---
 
