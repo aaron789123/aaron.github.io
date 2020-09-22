@@ -10,6 +10,7 @@ tags: [linux,openVPN]
 >本文以CentOS 7.8 64位  
 >转自 http://www.zhangblog.com/2020/05/09/openvpn01/  
 >https://help.aliyun.com/knowledge_detail/42521.html?spm=5176.7841507.2.7.Yv82xS  
+>http://www.suoniao.com/article/30149  
 
 ### yum源安装openssl和相关的依赖包
 ~~~
