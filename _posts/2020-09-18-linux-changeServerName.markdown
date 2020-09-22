@@ -1,7 +1,7 @@
 ---
 layout: post
 category: "linux"
-title:  "Linux系统中搭建openVPN(服务器)"
+title:  "更改服务器名字（阿里云）"
 tags: [linux,改名字]
 ---
 
