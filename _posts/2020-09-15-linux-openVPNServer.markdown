@@ -102,9 +102,10 @@ cp -a ta.key /etc/openvpn/server/
 参照/usr/local/openvpn-2.4.9/sample/sample-config-files/server.conf文件
 ~~~
 vim /etc/openvpn/server/server.conf   # 配置文件内容 local改为自己IP
+
 local 0.0.0.0
 port 1194
-proto tcp
+proto udp
 dev tun
 ca /etc/openvpn/server/ca.crt
 cert /etc/openvpn/server/server.crt
@@ -112,9 +113,11 @@ key /etc/openvpn/server/server.key
 dh /etc/openvpn/server/dh.pem
 server 10.8.0.0 255.255.255.0
 ifconfig-pool-persist ipp.txt
-push "route 172.16.10.0 255.255.255.0"
-;client-to-client
-;duplicate-cn
+;push "dhcp-option DNS 114.114.114.114"
+push "route 192.168.70 255.255.255.0"
+push "route-gateway 192.168.70.1"
+client-to-client
+duplicate-cn
 keepalive 10 120
 tls-auth /etc/openvpn/server/ta.key 0
 cipher AES-256-CBC
@@ -132,11 +135,11 @@ verb 3
 ;explicit-exit-notify 1
 ~~~
 
-### 查看防火墙和开启端口
+### 删除防火墙 
 ~~~
-firewall-cmd --state
-systemctl status firewalld.service
-firewall-cmd --zone=public --add-port=1194/tcp --permanent
+systemctl stop firewalld
+systemctl disable firewalld
+yum -y remove firewalld
 ~~~
 
 ### 启动openvpn服务并查看进程与端口
@@ -144,7 +147,13 @@ firewall-cmd --zone=public --add-port=1194/tcp --permanent
 systemctl start openvpn.service
 ps -ef | grep 'open'
 ##nobody   19095   1  0 01:19 ?   00:00:00 /usr/local/openvpn/sbin/openvpn --config server.conf
-netstat -lntup | grep '19095' 
+netstat -lntup | grep '1194' 
 ##tcp    0      0 0.0.0.0:1194    0.0.0.0:*     LISTEN     19095/openvpn
 ~~~
 
+### 安装开启iptables
+~~~
+yum -y install iptables-services
+systemctl enable iptables
+systemctl start iptables
+~~~
