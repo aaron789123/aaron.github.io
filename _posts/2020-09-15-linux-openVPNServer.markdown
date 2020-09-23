@@ -157,3 +157,20 @@ yum -y install iptables-services
 systemctl enable iptables
 systemctl start iptables
 ~~~
+
+### 添加iptables的规则 
+~~~
+vim /etc/sysconfig/iptables
+*nat
+-A POSTROUTING -s 10.8.0.0/24 -j MASQUERADE
+*filter
+-A INPUT -p udp -m state --state NEW -m udp --dport 1194 -j ACCEPT
+-A FORWARD -s 10.8.0.0/24 -j ACCEPT
+-A FORWARD -i tun0 -o eth0 -j ACCEPT
+-A FORWARD -i eth0 -o tun0 -j ACCEPT
+
+iptables-restore < /etc/sysconfig/iptables
+service iptables save
+echo "net.ipv4.ip_forward = 1" >> /etc/sysctl.conf
+sysctl -p
+~~~
