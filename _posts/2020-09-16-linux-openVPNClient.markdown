@@ -20,9 +20,10 @@ client.ovpn需要自己单独写(remote为服务器的IP地址)：
 ~~~
 client
 dev tun
-proto tcp
-remote 10.0.0.190 1194
+proto udp
+remote 0.0.0.0 1194
 resolv-retry infinite
+redirect-gateway def1
 nobind
 ;user nobody
 ;group nobody
@@ -36,7 +37,6 @@ tls-auth ta.key 1
 cipher AES-256-CBC
 compress lz4-v2
 verb 3
-;mute 20
 ~~~
 
 ### 使用openVPN打开client.ovpn，则可以连上
